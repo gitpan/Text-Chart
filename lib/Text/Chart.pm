@@ -1,7 +1,7 @@
 package Text::Chart;
 
-our $DATE = '2014-08-16'; # DATE
-our $VERSION = '0.01'; # VERSION
+our $DATE = '2015-01-03'; # DATE
+our $VERSION = '0.02'; # VERSION
 
 use 5.010001;
 use strict;
@@ -249,7 +249,7 @@ Text::Chart - Generate text-based chart
 
 =head1 VERSION
 
-This document describes version 0.01 of Text::Chart (from Perl distribution Text-Chart), released on 2014-08-16.
+This document describes version 0.02 of Text::Chart (from Perl distribution Text-Chart), released on 2015-01-03.
 
 =head1 SYNOPSIS
 
@@ -352,7 +352,7 @@ Arguments ('*' denotes required arguments):
 
 =item * B<chart_width> => I<float>
 
-=item * B<data>* => I<array>
+=item * B<data>* => I<array[num]|array[array]|array[hash]>
 
 (Table) data to chart.
 
@@ -378,7 +378,7 @@ column named C<data>. Array of arrays will have columns named C<column0>,
 C<column1> and so on. Array of hashes will have columns named according to the
 hash keys.
 
-=item * B<data_column> => I<array|str>
+=item * B<data_column> => I<str|array[str]>
 
 Which column(s) contain data to plot.
 
@@ -400,10 +400,7 @@ Chart type.
 
 =back
 
-Return value:
-
- (str)
-
+Return value:  (str)
 =head1 FAQ
 
 =head2 Why am I getting 'Wide character in print/say' warning?
@@ -412,30 +409,6 @@ You are probably printing Unicode characters to STDOUT without doing something
 like this beforehand:
 
  binmode(STDOUT, ":utf8");
-
-=head1 TODO
-
-=over
-
-=item * More chart types
-
-=item * Colors
-
-=item * Resampling
-
-Reduce data points, for example I have 1000 numbers that I want to display in a
-80-column chart or sparkline.
-
-=item * Formatting of data (or label)
-
-Using L<Data::Unixish> (like in L<Text::ANSITable>), and specifiable from an
-environment variable.
-
-=item * Option to switch column/row (like in Excel)?
-
-Probably not. I prefer that the data is adjusted instead.
-
-=back
 
 =head1 SEE ALSO
 
@@ -466,11 +439,11 @@ feature.
 
 =head1 AUTHOR
 
-Steven Haryanto <stevenharyanto@gmail.com>
+perlancar <perlancar@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2014 by Steven Haryanto.
+This software is copyright (c) 2015 by perlancar@cpan.org.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
